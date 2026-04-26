@@ -312,5 +312,4 @@ def renew_license(key):
             new_expiry = datetime.now() + timedelta(days=days)
         else:
             new_expiry = current_expiry + timedelta(days=days)
-            
-        conn.execute("UPDATE licenses SET expiry_date=?, status='Active' WHERE key=?", (new_expiry, key
+       conn.execute("UPDATE licenses SET expiry_date=?, status='Active' WHERE key=?", (new_expiry, key))
